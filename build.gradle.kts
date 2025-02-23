@@ -1,16 +1,19 @@
 plugins {
-    kotlin("jvm") version "2.1.0"
+    alias(libs.plugins.kotlin.jvm)
 }
 
-group = "dev.syncended"
-version = "1.0-SNAPSHOT"
+group = "dev.syncended.dnsc"
+version = "1.0"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation(kotlin("test"))
+    implementation(libs.kotlin.stdlib)
+    implementation(libs.kotlin.coroutines.core)
+
+    implementation(libs.koin.core)
 }
 
 tasks.test {
